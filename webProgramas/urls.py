@@ -18,8 +18,10 @@ from django.urls import path
 from . import views #importa el archivo views.py
 
 urlpatterns = [
-    path('login.html/', views.loginView, name='login'), #login usuarios checar la extensión
     path('', views.index, name='index'), #index duh (path, funcion, alias)
-    path('empty/', views.vacia, name='vacia'),
+    path('login', views.loginView, name='login'), #login usuarios checar la extensión
+    path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
+    path('registro', views.registro, name='registro'),
+    #path('empty/', views.vacia, name='vacia'),
     path('admin/', admin.site.urls), #esta estaba por default
 ]
