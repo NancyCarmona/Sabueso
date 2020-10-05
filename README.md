@@ -1,6 +1,6 @@
 # webProgramas
 Sitio web con django, monitor de proyectos  
-¿Cómo ejecutar?\
+¿Cómo se ejecuta?\
 -Crear un entorno virtual dentro de la carpeta donde trabajarás (comando por consola)\
 `python3 -m venv nombre_entorno_virtual`\
 -Dentro de esa carpeta poner el código de este proyecto, hay 2 formas de obtenerlo.\
