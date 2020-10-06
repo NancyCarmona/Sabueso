@@ -12,11 +12,15 @@ Sitio web con django, monitor de proyectos
 `source nombre_entorno_virtual/bin/activate`
 
 - Instalar las siguientes dependencias:  
-Django==3.1.1  
-mysqlclient==2.0.1
+pip3 install Django==3.1.1  \
 
-Puedes hacerlo manualmente o ejecutar el siguiente comando:  
-`pip install -r reqs.txt`
+Para instalar mysqlconfig (conector para MySQl)\
+
+`brew install mysql-client`
+`echo 'export PATH="/usr/local/opt/mysql-client/bin:$PATH"' >> ~/.bash_profile`
+`export PATH="/usr/local/opt/mysql-client/bin:$PATH"`
+`pip install mysqlclient`
+
 
 - Ejecutar migración
 `python3 manage.py migrate`
