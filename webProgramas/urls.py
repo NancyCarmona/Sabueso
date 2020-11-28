@@ -19,9 +19,26 @@ from . import views #importa el archivo views.py
 
 urlpatterns = [
     path('', views.index, name='index'), #index duh (path, funcion, alias)
-    path('login', views.loginView, name='login'), #login usuarios checar la extensión
-    path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
-    path('registro', views.registro, name='registro'),
-    #path('empty/', views.vacia, name='vacia'),
+    #path('login', views.loginView, name='login'), #login usuarios checar la extensión
+    #path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
+    path('registro', views.register, name='register'),
+    path('seguimiento', views.seguimiento, name='seguimiento'),
+    path('dof', views.dof, name='dof'),
+    path('inegi', views.inegi, name='inegi'),
+    path('shcp', views.shcp, name='shcp'),
+    path('profesionistas', views.prof, name='prof'),
+    path('ong', views.ong, name='ong'),
+    path('gobierno', views.gob, name='gob'),
+    path('general', views.gral, name='gral'),
+    path('pagos', views.pagos, name='pagos'),
+    path('nosotros', views.nos, name='nos'),
+    path('faq', views.faq, name='faq'),
+    path('contacto', views.contacto, name='contacto'),
+    path('terminos', views.terms, name='terms'),
+    path('privacidad', views.privacy, name='privacy'),
+    path('detalle', views.detalle, name='detalle'),
+    #path('micuenta', views.micuenta, name='micuenta'),
     path('admin/', admin.site.urls), #esta estaba por default
 ]
+
+# {% url 'index' %} 

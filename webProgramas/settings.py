@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'webProgramas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbMonitoreo',
-        'USER': 'paginaAdmin',
-        'PASSWORD': 'mypasswordnuevo',
-        'HOST': 'pagina.ctfvjf5qtylm.us-east-2.rds.amazonaws.com',
+        'NAME': 'dbWebProgramas',
+        'USER': 'root',
+        'PASSWORD': 'gatitosrosas',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

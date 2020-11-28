@@ -1,346 +1,616 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="es">
-
+<html class="scheme_original" lang="es-MX">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" href="{%static 'img/favicon.ico'%}"> 
-
-    <title>Inicio</title> <!-- tittle -->
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" /> 
-    <link rel="stylesheet" href="{% static 'css/animate.css'%}" /> 
-    <!-- Owl Stylesheets -->
-    <link rel="stylesheet" href="{% static 'owlcarousel/assets/owl.carousel.min.css'%}">
-    <link rel="stylesheet" href="{% static 'owlcarousel/assets/owl.theme.default.min.css'%}">
-    <!-- icons font -->
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}"> 
-    <link rel="stylesheet" href="{% static 'font/flaticon.css'%}"> 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.offcanvas.min.css'%}" /> 
-    <!-- responsive styles -->
-    <link rel="stylesheet" href="{% static 'css/responsive.css'%}"> 
-    
-    <!--
-	<style>
-    .background-loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999; 
-    background: url(preview.gif) center no-repeat #fff;
-    background-size: 290px;
-	overflow: hidden;
-    }
-    </style>
-    -->
-
+    <title>DIGITOREO | Inicio</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta content="telephone=no" name="format-detection">
+    <link href="http://fonts.googleapis.com/css?family=Poppins:300,300italic,400,400italic,500,500italic,600,600italic,700,700italic%7CLora:300,300italic,400,400italic,500,500italic,600,600italic,700,700italic&#038;subset=latin,latin-ext&#038;" media="all" property="stylesheet" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/fontello/css/fontello.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+	<link href="{% static 'css/fontello-d856402e/css/fontello.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/instagram/sb-instagram.min.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/essgrid/ess-grid.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/revslider/rev-slider.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/woocommerce/woocommerce.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/style.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/colors.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/woocommerce/woocommerce-layout.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/woocommerce/plugin.woocommerce.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/animation.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/shortcodes.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/messages.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/magnific-popup/magnific-popup.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'js/vendor/swiper/swiper.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/responsive.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
+    <link href="{% static 'images/favi.png' %}" rel="icon" sizes="192x192">
 </head>
-
-<body data-spy="scroll" data-offset="80"> <!-- BODY START -->
-    
-    <div class="background-loader" id="pageloeadacc"></div> <!-- PAGE LOADER -->
-
-    <div class="top-header-section"> <!-- START TOP SECTION -->
-        <div class="container"> <!-- START CONTAINER -->
-            <nav class="navbar navbar-expand-md"> <!-- START THE NAV -->
-
-                <div class="navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav mr-auto phonnochowop">
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="help.html">Preguntas frecuentes&nbsp;</a>
-                        </li>
-                        
-                    </ul>
-                    <div class="mt-2 mt-md-0">
-                        <ul class="navbar-nav mr-auto mrg-mnu-resp">
-                            <li class="nav-item">
-                                <a class="nav-link"><i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;contacto@mail.mx</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link"><i class="fa fa-phone" aria-hidden="true"></i> (22)28796536</a>
-                            </li>
-
-                            <li class="nav-item no-dslp-phon">
-                                <a href="http://www.facebook.com/lopezobrador.org.mx" target="_blank" class="nav-link"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                            </li>
-
-                            <li class="nav-item no-dslp-phon">
-                                <a href="http://www.twitter.com/lopezobrador_" target="_blank" class="nav-link"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            </li>
-                            <li class="nav-item no-dslp-phon">
-                                <a href="http://www.google.com.mx" target="_blank" class="nav-link"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                            </li>
-
-                        </ul>
+<body class="body_style_wide body_filled scheme_original top_panel_show top_panel_over sidebar_hide sidebar_outer_show sidebar_outer_yes top_panel_fixed">
+    <div id="page_preloader"></div>
+    <div class="body_wrap">
+      <div class="page_wrap">
+            <header class="top_panel_wrap top_panel_style_3 scheme_original">
+                <div class="top_panel_wrap_inner top_panel_inner_style_3 top_panel_position_over">
+                    <div class="top_panel_top">
+                        <div class="content_wrap">
+                            <div class="top_panel_top_contact_area icon-location-light">
+                                Fernando de la Mora #4, Los Tenores, Puebla, Pue.
+                            </div>
+                           
+                            <div class="top_panel_top_ophone icon-call-out">
+                                22 28 79 65 36
+                            </div>
+                            <div class="top_panel_top_user_area cart_show">
+                                <div class="menu_pushy_wrap">
+                                    <a class="menu_pushy_button icon-1460034782_menu2" href="#"></a>
+                                </div>
+                                <ul class="menu_user_nav" id="menu_user">
+                                    <li class="menu_user_register_login">
+                                        <a class="popup_link popup_login_link icon-key-light" href="#popup_login">Inicia sesión</a> o 
+										<a href="{% url 'register' %}">Crea una cuenta</a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_panel_middle">
+                        <div class="content_wrap">
+                            <div class="contact_logo">
+                                <div class="logo">
+                                    <a href="{% url 'index' %}"><img alt="" class="logo_main" src="{% static 'images/logo_dark.png' %}"> <img alt="" class="logo_fixed" src="{% static 'images/logo.png' %}"></a>
+                                </div>
+                            </div>
+                            <div class="menu_main_wrap">
+                                <nav class="menu_main_nav_area menu_hover_fade">
+                                    <ul class="menu_main_nav" id="menu_main">
+                                        <li class="menu-item current-menu-item">
+                                            <a href="{% url 'index' %}"><span>Inicio</span></a>
+                                        </li>
+										<li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Monitoreos</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos de secretarias</span></a>
+                                                </li>
+                                              
+                                                <li class="menu-item-has-children menu-item">
+                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'dof' %}"><span>DOF</span></a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'inegi' %}"><span>INEGI</span></a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'shcp' %}"><span>Proyectos SHCP</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Servicios</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'ong' %}"><span>ONG y consultoras</span></a>
+                                                </li>
+												<li class="menu-item">
+                                                    <a href="{% url 'gob' %}"><span>Servidores públicos y gobierno</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'gral' %}"><span>Público general</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+										<li class="menu-item">
+                                            <a href="{% url 'pagos' %}"><span>Pagos</span></a>
+                                        </li>
+                                        
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Sobre nosotros</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'nos' %}"><span>Quiénes somos</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'faq' %}"><span>Preguntas frecuentes</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'contacto' %}"><span>Contacto</span></a>
+                                                </li>
+                                            </ul>
+                                    </ul>
+                                </nav>
+<div class="top_panel_top_socials top_panel_el">
+                  <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_facebook" href="https://www.facebook.com/digitoreo" target="_blank"><span class="icon-facebook"></span></a>
+                                        </div>
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_twitter" href="https://twitter.com/digitoreo" target="_blank"><span class="icon-twitter"></span></a>
+                                        </div>
+                                      
+                </div>
+                              </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav> <!-- END NAV -->
-        </div> <!-- END CONTAINER -->
-    </div> <!-- END TOP SERCTION -->
-
-    <div id="header-indx-pg" class="header-area-in"> <!-- START HEADER AREA -->
-        <div class="header-animation"> <!-- START THE HEADER ANIMATION -->
-            <span class="header-waves"></span>
-            <span class="white-background-header"></span>
-            <span class="black-background-header"></span>
-            <span class="server-bg"></span>
-            <span class="wiz-line"></span>
-            <span class="xo-on"></span>
-            <span class="xo-tw"></span>
-            <span class="xo-tr"></span>
-            <span class="xo-fr"></span>
-            <span class="right-poly-side-top"></span>
-        </div> <!-- END HEADER ANIMATION -->
-        <div class="main-header">
-            <div class="top-header-nav-cs"> <!-- START TOP HEADER NAV -->
-                <div class="container"> <!-- START CONTAINER -->
-                    <nav class="navbar navbar-expand-lg"> <!-- START NAVBAR -->
-                        <div class="overlay"></div>
-                        <a class="navbar-brand mr-auto logo-header" href=" "></a> <!-- THE WEBSITE LOGO -->
-                        <button class="menu-btn-span-bar ml-auto" type="button" id="navbarSideButton">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-
-                        <div class="navbar-side" id="navbarSide"> <!-- MAIN NAV -->
-                            <ul class="navbar-nav ml-auto">
-							
-								<li class="nav-item">
-                                    <a class="nav-link" href=" ">Inicio</a>
-                                    
-									</li>
-									
-									
-								
-<script src="https://kit.fontawesome.com/6e31d9eff7.js" crossorigin="anonymous"></script>
-                                <li class="dropdown mega-dropdown nav-item">
-                                    <a href="#" class="dropdown-toggle nav-link" id="dropdown02" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">Recursos <span class="caret"></span></a>
-                                    <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="dropdown02">
-                                        <h5 class="head-mega-tittle"><span>Recursos</span></h5>
-                                        <div class="row justify-content-md-center main-mega-a-service">
-                                            <a href="web-hosting.html">
-                                                <i class="fas fa-user-tie"></i> Profesionistas y especialistas
-                                            </a>
-
-                                            <a href="wordpress-hosting.html">
-                                                <i class="fas fa-building"></i> Organizaciones No Gubernamentales y Consultorías
-                                            </a>
-
-                                            <a href="dedicate-hosting.html">
-                                                <i class="fas fa-landmark"></i> Servidores Públicos y Gobierno
-                                            </a>
-
-                         
+            </header>
+            <nav class="menu_pushy_nav_area pushy pushy-left scheme_dark">
+                <div class="pushy_inner">
+                    <a class="close-pushy" href="#"></a>
+                    <div class="sidebar_outer widget_area scheme_dark">
+                        <div class="sidebar_outer_inner widget_area_inner">
+                            <div class="sidebar_outer_widgets">
+                                <aside class="widget widget_socials">
+                                    <h5 class="widget_title">Sobre nosotros</h5>
+                                    <div class="widget_inner">
+                                        <div class="logo_descr">
+                                            Somos un grupo de profesionistas preparados para asumir las exigencias del mercado de la información, con amplia experiencia en el monitoreo y organización de la información específica.
+<br>
+¿Quieres saber más?
+                                            <br>
+											Contáctanos
+                                            <ul class="sc_list sc_list_style_iconed custom_cl_1">
+                                                <li class="sc_list_item"><span class="sc_list_icon icon-location-light custom_cl_2"></span> Fernando de la Mora #4, Los Tenores, Puebla, Pue.</li>
+                                                <li class="sc_list_ite"><span class="sc_list_icon icon-mobile-light custom_cl_2"></span>Tel: 22 28 79 65 36</li>
+                                                <li class="sc_list_item"><span class="sc_list_icon icon-mail-light custom_cl_2"></span>Email: contacto@digitoreo.com</li>
+                                          </ul>
                                         </div>
                                     </div>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="domain.html">Blog</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="company.html">Acerca de nosotros</a>
-                                </li>
-
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contacto.html">Contacto</a>
-                                </li>
-
-                                <li class="nav-item header-login-btn ">
-                                    <a  aria-haspopup="true" id="customarea" aria-expanded="false" href="login">INICIAR SESIÓN</a> <!-- LOGIN BUTTON -->
-                                     <div class="dropdown-menu login-drop-down-header" aria-labelledby="customarea">
-                                    <!--
-                                     <form method="post" class="login-form" action="dologin.php" role="form"> 
-                                    {% csrf_token %} 
-                                    <div class="form-group">
-                                     <input type="email" name="username" class="form-control" id="inputEmail" placeholder="correo electrónico" autofocus>
-                                     </div>
-
-                                     <div class="form-group">
-                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Contraseña" autocomplete="off" >
+                                </aside>
+<aside class="widget widget_text">
+              <h5 class="widget_title">Boletin informativo</h5>
+                                    <div class="textwidget">
+                                        <div class="sc_emailer sc_emailer_opened style_line">
+                                            <div class="lable">
+                                                Boletin informativo
+                                            </div>
+                                            <form class="sc_emailer_form">
+                                                <input class="sc_emailer_input" name="email" placeholder="Introduce tu e-mail" type="text" value=""><a class="sc_emailer_button" href="#" title="">Suscribir</a>
+                                            </form>
+                                        </div>
                                     </div>
-									<p class="help-block"><a href="#">Olvidé la contraseña</a> <a href="#">Crear cuenta</a></p>
-
-                             
-
-                                    <div align="center">
-                                    <button id="login" type="submit" class="btn btn-primary" value="Iniciar" >Iniciar sesión</button>
-                                    </div>
-                                    </form>
-                                   -->
-                                     </div>
-								</li>
-
-                                <li class="nav-item header-regsiter-btn">
-                                    <a class="wow fadeInUp" href="registro">CREAR CUENTA</a> <!-- SIGN UP BUTTON -->
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="site-overlay"></div>
+            <div class="header_mobile header_mobile_style_3">
+                <div class="content_wrap">
+                    <div class="menu_button icon-menu"></div>
+                    <div class="logo">
+                        <a href="{% url 'index' %}"><img alt="" class="logo_main" src="{% static 'images/logo_dark.png' %}"></a>
+                    </div>
+</div>
+                <div class="side_wrap">
+                    <div class="close">
+                        Cerrar
+                    </div>
+                    <div class="panel_top">
+                      <nav class="menu_main_nav_area">
+                            <ul class="menu_main_nav" id="menu_mobile">
+                                <li class="menu-item current-menu-item">
+                                            <a href="{% url 'index' %}"><span>Inicio</span></a>
+                              </li>
+                               
+										<li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Monitoreos</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos de secretarias</span></a>
+                                                </li>
+                                              
+                                                <li class="menu-item-has-children menu-item">
+                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <ul class="sub-menu">
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'dof' %}"><span>DOF</span></a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'inegi' %}"><span>INEGI</span></a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a href="{% url 'shcp' %}"><span>Proyectos SHCP</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                
+                                            </ul>
+                                        </li>
+                                        
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Servicios</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'ong' %}"><span>ONG y consultoras</span></a>
+                                                </li>
+												<li class="menu-item">
+                                                    <a href="{% url 'gob' %}"><span>Servidores públicos y gobierno</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'gral' %}"><span>Público general</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+										<li class="menu-item">
+                                            <a href="{% url 'pagos' %}"><span>Pagos</span></a>
+                                        </li>
+                                        
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="#"><span>Sobre nosotros</span></a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="{% url 'nos' %}"><span>Quiénes somos</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'faq' %}"><span>Preguntas frecuentes</span></a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="{% url 'contacto' %}"><span>Contacto</span></a>
+                                                </li>
+                                            </ul>
                                 </li>
                             </ul>
-
-
-
-                        </div> <!-- END MAIN NAV -->
-                    </nav> <!-- END NAV -->
-                </div> <!-- END CONTAINER -->
-            </div> <!-- END TOP HEADER NAV -->
-			
-            <div class="container"> <!-- START CONTAINER -->
-                
-			<div class="headr-tx-middl">
-	           <div class="outliner-middl-ha">
-                <div class="domain-search"> <!-- DOMAIN SEARCH -->
-                    <h3 class="domain-header-title"> <span>Buscar</span>  <span>contenido</span>  </h3>
-                    <div class="row justify-content-md-center"> <!-- ROW -->
-                        <div class="col-md-8">
-                            <form class="wow fadeInUp" action="" id="domain-search-form"> <!-- START FORM -->
-                                <input id="search-text" type="text" name="domain" placeholder="Escribe aqui..." />
-                                <span class="inline-button">
-                                <button id="search-btn" type="submit" name="submit" value="Search"> <img src="{%static 'img/search.svg'%}" alt="search icon" /> </button>
-                            </span>
-                            </form> <!-- END FORM -->
+                      </nav>
+<div class="login">
+              <a class="popup_link popup_login_link icon-user" href="#popup_login">Inicia sesión</a>
+            </div>
+                        <div class="login">
+                           <nav class="menu_main_nav_area">
+                            <ul class="menu_main_nav" id="menu_mobile">
+                                <li class="menu-item current-menu-item">
+                                            <a href="{% url 'register' %}" class=icon-pencil><span>Crear cuenta</span></a>
+                              </li>
+                               
+                      </nav>
                         </div>
-                    </div> <!-- END ROW -->
+                    </div>
+                    <div class="panel_middle">
+                        <div class="contact_field contact_phone">
+                            <span class="contact_icon icon-call-out"></span> <span class="contact_label contact_phone">22 28 79 65 36</span>
+                        </div>
+                       
 
-                </div> <!-- END DOMAIN SEARCH -->
-				</div></div>
-            </div> <!-- END CONTAINER -->
-            {% if messages %}
-                    {% for message in messages%}
-                            <div class="alert {%if message.tags == 'success'%} alert-success {% endif %}">
-                                {{message}}
-                                <button type="button" class="close" data-dismiss="alert">x</button>
-                            </div> 
-                    {% endfor%}
-                {% endif%}
-        </div> <!-- END HEADER  -->
-    </div> <!-- END HEADER AREA -->    <!-- END PERTNER SECTION -->
-    <!-- END FIRST PLAN SEECTION -->
-    <!-- END SECOND SERCTION -->
-    <!-- END THIRD SERCTION -->
-    <!-- END FORTH SERCTION -->
+                    </div>
+                    <div class="panel_bottom">
+                        <div class="contact_socials">
+                            <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_small">
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_facebook" href="https://www.facebook.com/digitoreo" target="_blank"><span class="icon-facebook"></span></a>
+                                        </div>
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_twitter" href="https://twitter.com/digitoreo" target="_blank"><span class="icon-twitter"></span></a>
+                                        </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mask"></div>
+            </div>
+            <section class="top_panel_image top_panel_image_1">
+                <div class="top_panel_image_hover"></div>
+                <div class="top_panel_image_header">
+                    <h2>DIGITOREO</h2>
+					
+<h5 ><div style="text-align:justify">Tiene como objetivo organizar, sistematizar y clasificar información del gobierno en sus distintos órdenes, además de las distintas organizaciones no gubernamentales e internacionales en tiempo real la cual llega de manera puntual a través de nuestras alertas.</h5></div>
+</div>
+            </section>
+          <div class="page_content_wrap page_paddings_no">
+                <div class="sc_section custom_bg_2">
+                    <div class="content_wrap">
+                        <div class="sc_empty_space" data-height="2em"></div>
+                        <div class="sc_services_wrap">
+                            <div class="sc_services sc_services_style_services-4 sc_services_type_icons_img margin_top_huge margin_bottom_huge">
+                               <h2 class="sc_services_title sc_item_title">Nuestros servicios</h2>
+                                
+</div>
+                        </div>
+                    </div><!-- /.sc_services_wrap -->
+                </div>
+                <div class="sc_section"> </div>
+              <div class="sc_section custom_section_1">
+                    <div class="columns_wrap no_margins custom_bg_1">
+                        <div class="column-1_4">
+                            <div class="sc_empty_space" data-height="35px"></div>
+                            <div class="sc_section margin_top_small margin_right_small margin_bottom_large margin_left_small aligncenter">
+                                <div class="sc_section_inner">
+                                    <div class="sc_section_content_wrap">
+                                        <div class="sc_empty_space" data-height="0.5em"></div>
+                                        <figure class="sc_image sc_image_shape_square">
+                                            <img src="{% static 'images/svgs/showman.svg' %}" alt="" width="57" height="53">
+                                        </figure>
+                                        <div class="sc_empty_space" data-height="0.7em"></div>
+                                        <h4 class="sc_title sc_title_regular margin_top_tiny margin_bottom_tiny">Profesionistas y Especialistas</h4>
+<span><div style="text-align:justify">En este apartado encontrarán avisos, acuerdos y oficios, para las reglas de operación y ejecución de programas federales. Boletines estadísticos, alertas de cursos y talleres para especialistas, así como convocatorias para apoyos financieros de investigación (público o privado).</span></div><br><div class="sc_price_block_link">
+                                                                    <a class="sc_button sc_button_style_filled sc_button_size_medium" href="{% url 'prof' %}">Más información</a>
+                                                                </div>
+                                      <div class="sc_empty_space" data-height="1.1em"></div>
+										
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-1_4 custom_bg_3">
+                            <div class="sc_empty_space" data-height="35px"></div>
+                            <div class="sc_section margin_top_small margin_right_small margin_bottom_large margin_left_small aligncenter">
+                                <div class="sc_section_inner">
+                                    <div class="sc_section_content_wrap">
+                                        <div class="sc_empty_space" data-height="0.5em"></div>
+                                        <figure class="sc_image sc_image_shape_square">
+                                            <img alt="" src="{% static 'images/svgs/organizacion.svg' %}" alt="" width="57" height="53">
+                                        </figure>
+                                        <div class="sc_empty_space" data-height="0.7em"></div>
+                                        <h4 class="sc_title sc_title_regular margin_top_tiny margin_bottom_tiny custom_cl_4">ONG y Consultoras</h4>
+<span class="custom_cl_4"><div style="text-align:justify">En este apartado encontrarán licitaciones, cartera de proyectos, subastas de gobierno, información de indicadores macroeconómicos, convenios de colaboración, reglamentos y normas oficiales. Asimismo, la información está organizada para que la puedan consultar a nivel federal o estatal.</span></div><br> <div class="sc_price_block_link">
+                                                                    <a class="sc_button sc_button_style_filled sc_button_size_medium" href="{% url 'ong' %}">Más información</a>
+                                                                </div>
+                                      <div class="sc_empty_space" data-height="1.1em"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-1_4 custom_bg_4">
+                            <div class="sc_empty_space" data-height="35px"></div>
+                            <div class="sc_section margin_top_small margin_right_small margin_bottom_large margin_left_small aligncenter">
+                                <div class="sc_section_inner">
+                                    <div class="sc_section_content_wrap">
+                                        <div class="sc_empty_space" data-height="0.5em"></div>
+                                        <figure class="sc_image sc_image_shape_square">
+                                            <img alt="" src="{% static 'images/svgs/edificio-del-gobierno.svg' %}" alt="" width="57" height="53">
+                                        </figure>
+                                        <div class="sc_empty_space" data-height="0.7em"></div>
+                                        <h5 class="sc_title sc_title_regular margin_top_tiny margin_bottom_tiny custom_cl_4">Servidores Públicos y Gobierno</h5>
+<span class="custom_cl_6"><div style="text-align:justify">Acuerdos, declaratorias de emergencia, resoluciones, reglamentos, circulares, programas y proyectos para su ejecución con fines sociales (salud, vivienda, seguridad, educación, etc.), cartera de proyectos de las diversas secretarías, así como un directorio de especialistas y consultorías.</span></div><div class="sc_price_block_link">
+                                                                    <a class="sc_button sc_button_style_filled sc_button_size_medium" href="{% url 'gob' %}">Más información</a>
+                                                                </div>
+                                      <div class="sc_empty_space" data-height="1.35em"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column-1_4 custom_bg_5">
+                            <div class="sc_empty_space" data-height="35px"></div>
+                            <div class="sc_section margin_top_small margin_right_small margin_bottom_large margin_left_small aligncenter">
+                                <div class="sc_section_inner">
+                                    <div class="sc_section_content_wrap">
+                                        <div class="sc_empty_space" data-height="0.5em"></div>
+                                        <figure class="sc_image sc_image_shape_square">
+                                            <img alt="" src="{% static 'images/svgs/dialog.svg' %}" alt="" width="57" height="53">
+                                        </figure>
+                                        <div class="sc_empty_space" data-height="0.7em"></div>
+                                        <h4 class="sc_title sc_title_regular margin_top_tiny margin_bottom_tiny custom_cl_4">Público en general</h4>
+<span class="custom_cl_6"><div style="text-align:justify">En este apartado encontrarán de manera general la información de las áreas de trabajo de manera histórica, pueden consultar la información de interés de manera gratuita y sistematizada, sin generar alertas.</span><br><br><br><br></div><div class="sc_price_block_link">
+                                                                    <a class="sc_button sc_button_style_filled sc_button_size_medium" href="{% url 'gral' %}">Más información</a>
+                                                                </div>
+                                      <div class="sc_empty_space" data-height="1.1em"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			
-			<section class="our-services"> <!-- FIVTH SERCTION -->
-        <div class="container"> <!-- CONTAINER -->
-           <h5 class="tittle-head">Nuestros servicios <span><div class="alert alert-warning" role="alert" style="text-align:justify">
-					  Ofrecemos organizar y dar alertas sobre campos específicos de búsqueda para profesionistas, servidores públicos, organizaciones civiles y gobierno, estas notificaciones se les hace llegar de una manera eficiente y en tiempo real para su correcta utilización.
-					</div></span></h5> <!-- TITTLE -->
-			
-			
-
-            <div class="row justify-content-center"> <!-- ROW -->
-                <div class="col-3">
-                    <div class="box-service orng-box-icon wow fadeInUp">
-                        <i class="flaticon-box-1"></i>
-                        <h6>Información hacendaria y presupuestal.</h6>
-                        <p>&nbsp;</p>
+			                  <div class="sc_section custom_bg_2">
+                    <div class="sc_empty_space" data-height="2em"></div>
+                    <div class="sc_testimonials sc_testimonials_style_testimonials-1 margin_top_huge margin_bottom_huge aligncenter">
+                        <h2 class="sc_testimonials_title sc_item_title">Testimonios de clientes</h2>
+                        <div class="sc_testimonials_descr sc_item_descr">
+                            Testimonios de clientes que están satisfechos con los servicios que han sido efectivamente<br>
+                            utilizados en DIGITOREO.
+                        </div>
+                        <div class="sc_slider_swiper swiper-slider-container sc_slider_pagination sc_slider_pagination_bottom sc_slider_nocontrols" data-interval="7440" data-slides-min-width="250" data-slides-per-view="3">
+                            <div class="slides swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="sc_testimonial_item">
+                                        <div class="sc_testimonial_avatar"><img alt="" src="{% static 'images/testimonio-1-80x80.jpg' %}"></div>
+                                        <div class="sc_testimonial_content">
+                                            <p>Ser director de una empresa requiere la máxima atención y devoción. Esto fue exactamente lo que sentí cuando recurrí a sus productos y servicios. Todas nuestras preguntas y consultas fueron respondidas de manera efectiva e inmediata. Nuestro sitio web nunca se ha visto mejor, nunca. Gracias.</p>
+                                        </div>
+                                        <div class="sc_testimonial_author">
+                                            <span class="sc_testimonial_author_name">Gabriela Gómez</span> <span class="sc_testimonial_author_position">Abagada</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sc_testimonial_item">
+                                        <div class="sc_testimonial_avatar"><img alt="" src="{% static 'images/testimonio-2-80x80.jpg' %}"></div>
+                                        <div class="sc_testimonial_content">
+                                            <p>Nunca se sabe lo que va a pasar hasta que lo intenta. Pero déjame decirte que arriesgarme con estos tipos valió la pena. Ahora somos un cliente habitual, ¡y esta fue probablemente la mejor decisión que tomamos! ¡Nuestra empresa agradece su ayuda y gran trabajo!</p>
+                                        </div>
+                                        <div class="sc_testimonial_author">
+                                            <span class="sc_testimonial_author_name">Jaime Martínez</span> <span class="sc_testimonial_author_position">Contador</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sc_testimonial_item">
+                                        <div class="sc_testimonial_avatar"><img alt="" src="{% static 'images/testimonio-3-80x80.jpg' %}"></div>
+                                        <div class="sc_testimonial_content">
+                                            <p>Recomiendo encarecidamente a estos chicos a todos los que busquen ideas frescas, productos de calidad y una excelente atención al cliente. Podrá encontrar lo que necesita y más aquí sin problemas. Gracias por su tiempo y esfuerzo hacia nuestro proyecto. ¡Estaremos en contacto!</p>
+                                        </div>
+                                        <div class="sc_testimonial_author">
+                                            <span class="sc_testimonial_author_name">Carlos Jiménez</span> <span class="sc_testimonial_author_position">Emprendedor</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="sc_testimonial_item">
+                                        <div class="sc_testimonial_avatar"><img alt="" src="{% static 'images/testimonio-4-80x80.jpg' %}"></div>
+                                        <div class="sc_testimonial_content">
+                                            <p>¡Disfruté mucho trabajar con ustedes! No importa qué problemas o preguntas surgieron, siempre estuvo allí para ayudar. Agradezco su servicio, productos de calidad y enfoque profesional en todos los aspectos. ¡Sigan con el excelente trabajo y háganos saber lo que viene después!</p>
+                                        </div>
+                                        <div class="sc_testimonial_author">
+                                            <span class="sc_testimonial_author_name">Susana Salazar</span><span class="sc_testimonial_author_position">Empresaria</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sc_slider_controls_wrap">
+                                <a class="sc_slider_prev" href="#"></a> <a class="sc_slider_next" href="#"></a>
+                            </div>
+                            <div class="sc_slider_pagination_wrap"></div>
+                        </div>
+                    </div>
+                    <div class="sc_empty_space" data-height="2em"></div>
+                </div>
+</div><!-- </.page_content_wrap> -->
+                     <!-- /.footer_area_wrap -->
+        <footer class="footer_wrap widget_area scheme_dark">
+                <div class="footer_wrap_inner widget_area_inner">
+                    <div class="content_wrap">
+                        <div class="columns_wrap">
+                            <aside class="column-1_3 widget widget_socials">
+                              <div class="widget_inner">
+                                <div class="logo">
+                                  <a href="{% url 'index' %}"><img alt="" class="logo_main" src="{% static 'images/logo-footer.png' %}"></a>
+                                </div>
+                                    <div class="logo_descr">
+                                        
+                                        
+                                        <ul class="sc_list sc_list_style_iconed custom_cl_1">
+                                          <li class="sc_list_item"><span class="sc_list_icon icon-location-light custom_cl_2"></span>Fernando de la Mora #4, Los Tenores, Puebla, Pue. C.P. 72590</li>
+                                            <li class="sc_list_item"><span class="sc_list_icon icon-mobile-light custom_cl_2"></span>Cel: 22-28-79-65-36</li>
+                                            <li class="sc_list_item"><span class="sc_list_icon icon-mail-light custom_cl_2"></span>contacto@digitoreo.com</li>
+											<li class="sc_list_item"><span class="sc_list_icon icon-copyright custom_cl_2"></span>2020 Digitoreo</li>
+										
+                                        </ul>
+                                    </div>
+                              </div>
+                            </aside>
+                            <aside class="column-1_3 widget widget_recent_posts">
+                                <h5 class="widget_title">Nosotros</h5>
+								
+                                  <ul class="sc_list sc_list_style_iconed">
+                                  <li class="sc_list_item"><a href="{% url 'nos' %}"><span class="sc_list_icon icon-right-open custom_cl_8"></span>Quiénes somos</a></li>
+									  
+                                  <li class="sc_list_item"><a href="{% url 'faq' %}"><span class="sc_list_icon icon-right-open custom_cl_8"></span>Preguntas frecuentes</a></li>
+									  
+                                  <li class="sc_list_item"><a href="{% url 'contacto' %}"><span class="sc_list_icon icon-right-open custom_cl_8"></span>Contacto</a></li>
+									  
+								  <li class="sc_list_item"><a href="{% url 'terms' %}"><span class="sc_list_icon icon-right-open custom_cl_8"></span>Términos y condiciones</a></li>
+									  
+                                  <li class="sc_list_item" ><a href="{% url 'privacy' %}"><span class="sc_list_icon icon-right-open custom_cl_8"></span>Aviso de privacidad</a></li>
+                              </ul>
+                            </aside>
+                            <aside class="column-1_3 widget widget_text">
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+								<br>
+							  <a class="sc_button sc_button_style_filled sc_button_size_medium sc_button_iconed icon-paper-plane-light" href="{% url 'contacto' %}">Contáctanos</a>
+                            </aside>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-3">
-                    <div class="box-service orgwani-box-icon">
-                        <i class="flaticon-badge"></i>
-                        <h6>Análisis del sistema de licitaciones de compranet</h6>
-                        <p>&nbsp;</p>
+            </footer><!-- /.footer_wrap -->
+            <!-- /.footer_area_wrap -->
+            <div class="copyright_wrap copyright_style_soc scheme_dark">
+                <div class="copyright_wrap_inner">
+                    <div class="content_wrap">
+                        <div class="sc_socials sc_socials_type_icons sc_socials_shape_square sc_socials_size_tiny">
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_facebook" href="https://www.facebook.com/digitoreo" target="_blank"><span class="icon-facebook"></span></a>
+                                        </div>
+                                        <div class="sc_socials_item">
+                                            <a class="social_icons social_twitter" href="https://twitter.com/digitoreo" target="_blank"><span class="icon-twitter"></span></a>
+                                        </div>
+                           
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-3">
-                    <div class="box-service blue-box-icon wow fadeInUp">
-                        <i class="flaticon-invoice"></i>
-                        <h6>Estadística y evaluación (INEGI;CONEVAL, entre otros).  </h6>
-                        <p>&nbsp;</p>
+          </div>
+        </div><!-- /.page_wrap -->
+    </div><!-- /.body_wrap -->
+    <!-- /.user-popUp -->
+    <div class="popup_wrap popup_login bg_tint_light" id="popup_login">
+        <a class="popup_close" href="#"></a>
+        <div class="form_wrap">
+            <div class="form_right">
+                <div class="logo">
+                    <a href="#"><img alt="" class="logo_login" src="{% static 'images/logo_loging.png' %}"></a>
+                </div>
+                <!-- 
+                <div class="login_socials_title">
+                    Puede iniciar sesión usando
+                </div>
+                <div class="login_socials_list">
+                    <div class="sc_socials sc_socials_type_icons sc_socials_shape_round sc_socials_size_tiny">
+                        <div class="sc_socials_item">
+                            <a class="social_icons social_facebook" href="#" target="_blank"><span class="icon-facebook"></span></a>
+                        </div>
+                        <div class="sc_socials_item">
+                            <a class="social_icons social_twitter" href="#" target="_blank"><span class="icon-twitter"></span></a>
+                        </div>
+                        <div class="sc_socials_item">
+                            <a class="social_icons social_google" href="#" target="_blank"><span class="icon-google"></span></a>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-3">
-                    <div class="box-service green-box-icon">
-                        <i class="flaticon-package-5"></i>
-                        <h6>Notificaciones en la cartera de proyectos de la SHCP</h6>
-                        <p>&nbsp;</p>
+                <div class="login_socials_or">
+                    <span>o</span>
+                </div> 
+                <div class="result message_block"></div>
+                -->
+            </div>
+            <div class="form_left">
+                <form action="#" class="popup_form login_form" id="login_form" method="post" name="login_form">
+                    <input name="redirect_to" type="hidden" value="#">
+                    <div class="popup_form_field login_field iconed_field">
+                        <input id="log" name="log" placeholder="E-mail" type="text" value="">
                     </div>
-                </div>
-
-            </div> <!-- END ROW -->
-
-            <div class="row justify-content-center"> <!-- ROW -->
-                <div class="col-3">
-                    <div class="box-service sbt-box-icon wow fadeInUp">
-                        <i class="flaticon-shield"></i>
-                        <h6>Recapitular y notificar las subastas del gobierno federal</h6>
-                        <p>&nbsp;</p>
+                    <div class="popup_form_field password_field iconed_field">
+                        <input id="password" name="pwd" placeholder="Contraseña" type="password" value="">
                     </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="box-service lgt-box-icon">
-                        <i class="flaticon-piggy-bank"></i>
-                        <h6>Monitoreo de cursos, talleres, conferencias, capacitaciones etc. </h6>
-                        <p>&nbsp;</p>
+                    <div class="popup_form_field remember_field">
+                        <a class="forgot_password" href="#">Olvidé la contraseña</a> <input id="rememberme" name="rememberme" type="checkbox" value="forever"> <label for="rememberme">Recuérdame</label>
                     </div>
-                </div>
-
-                <div class="col-3">
-                    <div class="box-service lmn-box-icon">
-                        <i class="flaticon-payment-method"></i>
-                        <h6>Información económica para la toma de decisiones</h6>
-                        <p>&nbsp;</p>
+                    <div class="popup_form_field submit_field">
+                        <input class="submit_button" type="submit" value="Acceder">
                     </div>
-                </div>
-
-
-
-            </div> <!-- END ROW -->
-
-        </div> <!-- END CONAINER -->
-    </section> <!-- END FIFTH SERCTION -->    <!-- END SIXTH SECTION -->
-    <!-- END SERVENTH SECTION -->
-    <!-- END EIGHTH SECTION -->
-    <!-- END NINTH SECTION -->
-
-    <section class="footer-section"> <!-- START FOOTER -->
-        <a class="footer-fb-icon" href="http://www.facebok.com/lopezobrador.org.mx" target="_blank">ttt<i class="fa fa-facebook"></i></a> <!-- FACEBOOK ICON -->
-        <a class="footer-twiiter-icon" href="http://www.twitter.com/lopezobrador_" target="_blank"><i class="fa fa-twitter">&nbsp;</i></a> <!-- TWIITER ICON -->
-        <a class="footer-pinterest-icon" href="http://www.google.com.mx" target="_blank"><i class="fa fa-pinterest-p">pin</i></a> <!-- PINTERSESTP INCON -->
-		
-        <div class="container"> <!-- CONTAINER -->
-            <div class="row justify-content"> <!-- ROW -->
-                <div class="col-5 first-panu-footer"> 
-                    <img class="footer-logo" src="{% static 'img/header/logo.png'%}" alt="" /> <!-- LOGO -->
-                    <p class="footer-text">José María Morelos #306, Cuarto, Huejotzingo, Puebla. C.P. 74160</p>
-                    <p class="footer-cpy">© 2020 Rasive.</p>
-                    <img class="footer-paypment" src="{% static 'img/footer/payment.png'%} " alt="" />
-                </div>
-<div class="col-3 third-panu-footer offset-lg-4">
-        <h5 class="tittle-footer">Suscribete <span>a nuestros news.</span></h5>
-                    <form id="subscribe-footer-form">
-                        <input type="text" name="email" placeholder="Escribe tu correo eléctronico.." />
-                        <button id="subscribe-btn" type="submit" name="submit" value="subscribe"> <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                    </form>
-              </div>
-
-            </div> <!-- ROW -->
-        </div> <!-- CONTAINER -->
-    </section> <!-- END FOOTER -->
-
-
+                </form>
+            </div>
+        </div><!-- /.login_wrap -->
+    </div><!-- /.popup_login -->
+    <div class="popup_wrap_bg"></div><a class="scroll_to_top icon-up" href="#" title="Scroll to top"></a> 
+    <script src="{% static 'js/vendor/jquery.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/jquery-migrate.min.js' %}" type='text/javascript'></script>
+	<script src="{% static 'js/vendor/essgrid/jquery.themepunch.tools.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/essgrid/jquery.themepunch.essential.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/revslider/jquery.themepunch.revolution.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/revslider/revolution.extension.slideanims.min.js' %}" type="text/javascript"></script> 
+    <script src="{% static 'js/vendor/revslider/revolution.extension.layeranimation.min.js' %}" type="text/javascript"></script> 
+    <script src="{% static 'js/vendor/revslider/revolution.extension.navigation.min.js' %}" type="text/javascript"></script> 
+    <script src="{% static 'js/vendor/instagram/sb-instagram.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/custom.js' %}" type="text/javascript"></script> 
+    <script src="{% static 'js/vendor/superfish.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_utils.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_init.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_debug.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_googlemap.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/template.init.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/mediaelement/mediaelement-and-player.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_shortcodes.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/custom/_messages.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/magnific-popup/jquery.magnific-popup.min.js' %}" type='text/javascript'></script> 
+    <script src="{% static 'js/vendor/swiper/swiper.js' %}" type='text/javascript'></script> 
+    <script src='http://maps.google.com/maps/api/js?key=' type='text/javascript'></script>
 </body>
-<script src="{% static 'js/jquery.min.js'%}"></script>
-<script src="{% static 'js/popper.min.js'%}"></script>
-<script src="{% static 'js/bootstrap.min.js'%}"></script>
-<script src="{% static 'js/smoothscroll.js'%}"></script>
-<script src="{% static 'owlcarousel/owl.carousel.min.js'%}"></script>
-<script src="{% static 'js/jquery.bootstrap.wizard.js'%}"></script>
-<script src="{% static 'js/jquery.counterup.min.js'%}"></script>
-<script src="{% static 'js/waypoints.min.js'%}"></script>
-<script src="{% static 'js/bootstrap.offcanvas.min.js'%}"></script>
-<script src="{% static 'js/pagescript.js'%}"></script>
-<script src="{% static 'js/wow.min.js'%}"></script>
-<script src="{% static 'js/vidbg.min.js'%}"></script>
 </html>
