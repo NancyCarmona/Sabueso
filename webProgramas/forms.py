@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 
 class RegisterForm(forms.Form):
     nombre = forms.CharField(min_length=3 ,max_length=30, required=True, widget=forms.TextInput(attrs={
@@ -36,7 +37,7 @@ class RegisterForm(forms.Form):
          'value':''
     }))
     #id="billing_company" name="billing_company"  
-    email = forms.EmailField( required=True, widget=forms.EmailInput(attrs={
+    e_mail = forms.EmailField(min_length=1, max_length=50,required=True, widget=forms.EmailInput(attrs={
         'type': 'email',
         'name':'email',
         'id':'inputEmail',
@@ -50,7 +51,7 @@ class RegisterForm(forms.Form):
     # id="billing_email" name="billing_email" 
     telefono = forms.CharField(min_length=10, max_length=10, required=True, widget=forms.TextInput(attrs={
         'type': 'tel',
-        'name':'phonenumber',
+        'name':'telefono',
         'id':'inputPhone',
         'class':'input-text', 
         'placeholder':' 10 dígitos' ,
@@ -96,8 +97,8 @@ class RegisterForm(forms.Form):
         'value': ''
     }))
     #id="billing_city" name="billing_city"
-    listaEstados= (
-        ('Selecciona estado', ''),
+    listaEstados= [
+        ('', 'Selecciona un estado'),
         ('Aguascalientes','Aguascalientes'),
         ('Baja California','Baja California'),
         ('Baja California Sur','Baja California Sur'),
@@ -111,34 +112,32 @@ class RegisterForm(forms.Form):
         ('Guerrero','Guerrero'),
         ('Hidalgo','Hidalgo'),
         ('Jalisco','Jalisco'),
-        ('Edo. de México','EdoMéxico'),
-        ('Michoacán','Michoacán'),
+        ('EdoMexico','Estado de México'),
+        ('Michoacan','Michoacán'),
         ('Morelos','Morelos'),
         ('Nayarit','Nayarit'),
-        ('Nuevo León','Nuevo León'),
+        ('Nuevo Leon','Nuevo León'),
         ('Oaxaca','Oaxaca'),
         ('Puebla','Puebla'),
-        ('Querétaro','Querétaro'),
+        ('Queretaro','Querétaro'),
         ('Quintana Roo','Quintana Roo'),
-        ('San Luis Potosí','San Luis Potosí'),
+        ('San Luis Potosi','San Luis Potosí'),
         ('Sinaloa ','Sinaloa '),
         ('Sonora','Sonora'),
         ('Tabasco','Tabasco'),
         ('Tamaulipas','Tamaulipas'),
         ('Tlaxcala','Tlaxcala'),
         ('Veracruz','Veracruz'),
-        ('Yucatán:','Yucatán:'),
+        ('Yucatan','Yucatán'),
         ('Zacatecas','Zacatecas'),
-        ('Ciudad de México','Ciudad de México')
-    )
-    estado = forms.ChoiceField(choices=listaEstados, required=True, widget=forms.TextInput(attrs={
+        ('Ciudad de Mexico','Ciudad de México')
+        #value, label
+    ]
+    estado = forms.ChoiceField(choices=listaEstados, required=True, widget=forms.Select(attrs={
         'name':'estado',
-        'id':'inputEstado',
-        'class':'input-text', 
-        'placeholder':'' ,
-        'autofocus':''
+        'class': 'country_to_state country_select'
     }))
-    codigoPostal = forms.CharField(min_length=1, max_length=30, required=True, widget=forms.TextInput(attrs={
+    codigoPostal = forms.CharField(min_length=5, max_length=5, required=True, widget=forms.TextInput(attrs={
         'name':'codigopostal',
         'id':'inputCodigoPostal',
         'class':'input-text', 
@@ -149,18 +148,65 @@ class RegisterForm(forms.Form):
     password = forms.CharField( min_length=6 ,max_length=30, required=True, widget=forms.PasswordInput({
         'type': 'password',
         'name': 'password',
-        'id': 'inputNewPassword',
-        'data-error-threshold': '50',
-        'data-warning-threshold': '75',
-        'class': 'field',
-        'placeholder': 'Contraseña',
+        'id': 'inputPassword',
+        'class': 'input-text',
+        'placeholder': '',
         'autocomplete': 'off'
     }))
     passwordCopy = forms.CharField( min_length=6 ,max_length=30, required=True, widget=forms.PasswordInput({
         'type': 'password',
         'name': 'password2',
         'id': 'inputNewPassword2',
-        'class': 'field',
-        'placeholder': 'Confirmar contraseña',
+        'class': 'input-text',
+        'placeholder': '',
+        'autocomplete': 'off'
+    }))
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError('Este correo ya se encuentra registrado')
+        return email
+
+    def clean(self):
+        cleaned_data = super().clean()
+        if cleaned_data.get('passwordCopy') != cleaned_data.get('password'):
+            self.add_error('passwordCopy', 'La contraseña no coincide')
+
+    def save(self):
+        return User.objects.create_user(
+                self.cleaned_data.get('e_mail'),
+                self.cleaned_data.get('e_mail'),
+                self.cleaned_data.get('password'),
+                first_name = self.cleaned_data.get('nombre'),
+                last_name = self.cleaned_data.get('apellidos'),
+             
+            )
+        '''company = self.cleaned_data.get('compania'),
+                direccion = self.cleaned_data.get('direccion'),
+                colonia = self.cleaned_data.get('colonia'),
+                ciudad = self.cleaned_data.get('ciudad'),
+                estado = self.cleaned_data.get('estado'),
+                codigo_postal = self.cleaned_data.get('codigoPostal')'''
+        
+
+class LoginForm(forms.Form):
+    e_mail = forms.EmailField(required=True, widget=forms.EmailInput(attrs={
+        'type': 'email',
+        'name':'email',
+        'id':'inputEmail',
+        'class':'input-text', 
+        'placeholder':'E-mail' ,
+        'autofocus':'',
+        'autocomplete': 'email',
+        'value': ''
+    }))
+    password = forms.CharField(min_length=6 ,max_length=30, required=True, widget=forms.PasswordInput({
+        'type': 'password',
+        'name': 'password',
+        'id': 'inputPassword',
+        'class': 'input-text',
+        'placeholder': 'Contraseña',
         'autocomplete': 'off'
     }))

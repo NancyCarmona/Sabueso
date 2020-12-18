@@ -44,8 +44,13 @@
                                 </div>
                                 <ul class="menu_user_nav" id="menu_user">
                                     <li class="menu_user_register_login">
-                                        <a class="popup_link popup_login_link icon-key-light" href="#popup_login">Inicia sesión</a> o 
-										<a href="{% url 'register' %}">Crea una cuenta</a>
+                                        {% if user.is_authenticated %}
+                                            <a href="#">Mi cuenta  ({{user.first_name}}) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+                                            <a href="{% url 'logout' %}">Cerrar sesión</a>
+                                        {% else %}
+                                            <a class="popup_link popup_login_link icon-key-light" href="{% url 'login' %}">Inicia sesión</a> o
+                                            <a href="{% url 'register' %}">Crea una cuenta</a>
+                                        {% endif %}
                                     </li>
                                 </ul>
                             </div>
@@ -164,7 +169,7 @@
                                         </div>
                                     </div>
                                 </aside>
-<aside class="widget widget_text">
+<!--<aside class="widget widget_text">
               <h5 class="widget_title">Boletin informativo</h5>
                                     <div class="textwidget">
                                         <div class="sc_emailer sc_emailer_opened style_line">
@@ -176,7 +181,7 @@
                                             </form>
                                         </div>
                                     </div>
-                              </aside>
+                              </aside> -->
                             </div>
                         </div>
                     </div>

@@ -19,8 +19,8 @@ from . import views #importa el archivo views.py
 
 urlpatterns = [
     path('', views.index, name='index'), #index duh (path, funcion, alias)
-    #path('login', views.loginView, name='login'), #login usuarios checar la extensión
-    #path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
+    path('login', views.loginView, name='login'), #login usuarios checar la extensión
+    path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
     path('registro', views.register, name='register'),
     path('seguimiento', views.seguimiento, name='seguimiento'),
     path('dof', views.dof, name='dof'),

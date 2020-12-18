@@ -4,9 +4,10 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib import messages
-#from django.contrib.auth.models import user
+from django.contrib.auth.models import User
 
 from .forms import RegisterForm
+from .forms import LoginForm
 
 def index(request):
 
@@ -58,51 +59,70 @@ def detalle(request):
     return render(request, 'detalle.html', {    })
 
 
-"""
+
 def loginView(request):
-    if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-        user = authenticate(username=username, password=password) 
+    formLogin = LoginForm(request.POST or None)
+    if request.method == 'POST'and formLogin.is_valid():
+        email = formLogin.cleaned_data.get('e_mail')
+        password = formLogin.cleaned_data.get('password')
+        user = authenticate(username=email, password=password) 
         #authenticate devuelve objeto user, si no existe devuelve none
         if user:
             login(request,user)
-            messages.success(request,'Bienvenido {}'.format(user.username))
+            #messages.success(request,'Bienvenida/o {}'.format(user.first_name))
             return redirect('index')
         else:
             messages.error(request, 'Usuario o contraseña no válidos')
     #else:
     #    return render(request,'empty.html', { })
-    return render(request,'login.html', { })
-"""
+    return render(request,'login.html', {
+        'formLogin': formLogin,
+     })
 
 
-"""
+
+
 def logoutView(request):
     logout(request)
-    messages.success(request, 'Sesión cerrada')
+    #messages.success(request, 'Sesión cerrada')
     return redirect('login')
-"""
+
 
 def register(request):
-    form = RegisterForm(request.POST or None)
-    if request.method == 'POST' and form.is_valid():
-        nombre= form.cleaned_data.get('username') #cleaned_date trae un diccionario
-        aPaterno = form.cleaned_data.get('aPaterno')
-        aMaterno = form.cleaned_data.get('aMaterno')
-        email = form.cleaned_data.get('email')
-        telefono = form.cleaned_data.get('telefono')
-        password = form.cleaned_data.get('password')
-
-        print(nombre)
-        print(email)
-        print(password)
+    formRegistro = RegisterForm(request.POST or None)#llenarlo con los datos o crearlo vacío
+    
+    if request.method == 'POST' and formRegistro.is_valid():
+        user = formRegistro.save()
+        if user:
+            login(request, user)
+            messages.success(request, "Usuario creado. Inicie sesión con su correo electrónico")
+            return redirect('index')
 
     return render(request, 'registro.html', {
-        'form' : form
+        'formRegistro' : formRegistro, # 'nombreForm': objeto
     })
 
 """
 def micuenta(request):
     return render(request, 'micuenta.html', {})
 """
+
+"""    
+esto iba en el if
+            apellidos = formRegistro.cleaned_data.get('apellidos')
+            company = formRegistro.cleaned_data.get('compania')
+            email = formRegistro.cleaned_data.get('email')
+            telefono = formRegistro.cleaned_data.get('telefono')
+            direccion = formRegistro.cleaned_data.get('direccion')
+            colonia = formRegistro.cleaned_data.get('colonia')
+            ciudad = formRegistro.cleaned_data.get('telefono')
+            estado = formRegistro.cleaned_data.get('estado')
+            codigopostal = formRegistro.cleaned_data.get('codigopostal')
+            password = formRegistro.cleaned_data.get('password')
+
+            print(nombre)
+            print(email)
+            print(password)
+        """
+        #if request.POST.get('login_flotante'):
+        #if request.method == 'POST' and formLogin.is_valid():

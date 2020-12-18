@@ -24,6 +24,20 @@
     <link href="{% static 'js/vendor/swiper/swiper.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
     <link href="{% static 'css/responsive.css' %}" media='all' property="stylesheet" rel='stylesheet' type='text/css'>
     <link href="{% static 'images/favi.png' %}" rel="icon" sizes="192x192">
+    <style>
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert {
+            position: relative;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+    </style>
 </head>
 <body class="body_style_wide body_filled scheme_original top_panel_show top_panel_over sidebar_hide sidebar_outer_show sidebar_outer_yes top_panel_fixed">
     <div id="page_preloader"></div>
@@ -46,14 +60,27 @@
                                 </div>
                                 <ul class="menu_user_nav" id="menu_user">
                                     <li class="menu_user_register_login">
-                                        <a class="popup_link popup_login_link icon-key-light" href="#popup_login">Inicia sesión</a> o 
-										<a href="{% url 'register' %}">Crea una cuenta</a>
+                                        {% if user.is_authenticated %}
+                                            <a href="#">Mi cuenta  ({{user.first_name}})  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> 
+                                            <a href="{% url 'logout' %}">Cerrar sesión</a>
+                                        {% else %}
+                                            <a class="popup_link popup_login_link icon-key-light" href="{% url 'login' %}">Inicia sesión</a> o
+                                            <a href="{% url 'register' %}">Crea una cuenta</a>
+                                        {% endif %} 										
                                     </li>
-                                   
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success" > 
+                                {{message}}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
                     <div class="top_panel_middle">
                         <div class="content_wrap">
                             <div class="contact_logo">
@@ -167,7 +194,7 @@
                                         </div>
                                     </div>
                                 </aside>
-<aside class="widget widget_text">
+<!--<aside class="widget widget_text">
               <h5 class="widget_title">Boletin informativo</h5>
                                     <div class="textwidget">
                                         <div class="sc_emailer sc_emailer_opened style_line">
@@ -179,7 +206,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                </aside>
+                                </aside> -->
                             </div>
                         </div>
                     </div>
@@ -309,6 +336,7 @@
 					
 <h5 ><div style="text-align:justify">Tiene como objetivo organizar, sistematizar y clasificar información del gobierno en sus distintos órdenes, además de las distintas organizaciones no gubernamentales e internacionales en tiempo real la cual llega de manera puntual a través de nuestras alertas.</h5></div>
 </div>
+
             </section>
           <div class="page_content_wrap page_paddings_no">
                 <div class="sc_section custom_bg_2">
