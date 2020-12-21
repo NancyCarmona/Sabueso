@@ -74,6 +74,8 @@ WSGI_APPLICATION = 'webProgramas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
+''' local
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -82,6 +84,16 @@ DATABASES = {
         'PASSWORD': 'gatitosrosas',
         'HOST': 'localhost',
         'PORT': '3306',
+    }
+} '''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nansinbling$dbDigitoro',
+        'USER': 'nansinbling',
+        'PASSWORD': 'gatitosrosas',
+        'HOST': 'nansinbling.mysql.pythonanywhere-services.com',
     }
 }
 
