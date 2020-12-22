@@ -26,7 +26,7 @@ SECRET_KEY = 'n7k_+8+@&mb=5uohqb%_2d9(plgmgyrfy^hfi2je5is99hre&d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com'] #default vacio
 
 
 # Application definition
@@ -135,6 +135,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#agregado para pythonanywhere
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'), #aqui se buscan los archivos estaticos
