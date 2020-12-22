@@ -72,13 +72,9 @@ def loginView(request):
             return redirect('index')
         else:
             messages.error(request, 'Usuario o contraseña no válidos')
-    #else:
-    #    return render(request,'empty.html', { })
     return render(request,'login.html', {
         'formLogin': formLogin,
      })
-
-
 
 
 def logoutView(request):
@@ -106,22 +102,3 @@ def micuenta(request):
     return render(request, 'micuenta.html', {})
 """
 
-"""    
-esto iba en el if
-            apellidos = formRegistro.cleaned_data.get('apellidos')
-            company = formRegistro.cleaned_data.get('compania')
-            email = formRegistro.cleaned_data.get('email')
-            telefono = formRegistro.cleaned_data.get('telefono')
-            direccion = formRegistro.cleaned_data.get('direccion')
-            colonia = formRegistro.cleaned_data.get('colonia')
-            ciudad = formRegistro.cleaned_data.get('telefono')
-            estado = formRegistro.cleaned_data.get('estado')
-            codigopostal = formRegistro.cleaned_data.get('codigopostal')
-            password = formRegistro.cleaned_data.get('password')
-
-            print(nombre)
-            print(email)
-            print(password)
-        """
-        #if request.POST.get('login_flotante'):
-        #if request.method == 'POST' and formLogin.is_valid():

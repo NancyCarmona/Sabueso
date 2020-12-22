@@ -183,12 +183,6 @@ class RegisterForm(forms.Form):
                 last_name = self.cleaned_data.get('apellidos'),
              
             )
-        '''company = self.cleaned_data.get('compania'),
-                direccion = self.cleaned_data.get('direccion'),
-                colonia = self.cleaned_data.get('colonia'),
-                ciudad = self.cleaned_data.get('ciudad'),
-                estado = self.cleaned_data.get('estado'),
-                codigo_postal = self.cleaned_data.get('codigoPostal')'''
         
 
 class LoginForm(forms.Form):

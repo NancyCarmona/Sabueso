@@ -40,5 +40,3 @@ urlpatterns = [
     #path('micuenta', views.micuenta, name='micuenta'),
     path('admin/', admin.site.urls), #esta estaba por default
 ]
-
-# {% url 'index' %} 
