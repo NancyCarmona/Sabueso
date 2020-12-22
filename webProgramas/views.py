@@ -10,7 +10,6 @@ from .forms import RegisterForm
 from .forms import LoginForm
 
 def index(request):
-
     return render(request, 'index.html', {    })
 
 def seguimiento(request):
