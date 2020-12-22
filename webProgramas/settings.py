@@ -137,7 +137,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #agregado para pythonanywhere
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/site') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 
 
 STATICFILES_DIRS = (
