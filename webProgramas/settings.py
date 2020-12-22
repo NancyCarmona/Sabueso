@@ -26,8 +26,8 @@ SECRET_KEY = 'n7k_+8+@&mb=5uohqb%_2d9(plgmgyrfy^hfi2je5is99hre&d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['contentpirates.pythonanywhere.com'] #default es vacio
-#'127.0.0.1', 
+ALLOWED_HOSTS = ['127.0.0.1','contentpirates.pythonanywhere.com'] #default es vacio
+#
 
 # Application definition
 
