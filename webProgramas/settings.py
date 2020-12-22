@@ -139,6 +139,7 @@ STATIC_URL = '/static/'
 #agregado para pythonanywhere
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 
+'''
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'), #aqui se buscan los archivos estaticos
-)
+) '''
