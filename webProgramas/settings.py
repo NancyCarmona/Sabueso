@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'n7k_+8+@&mb=5uohqb%_2d9(plgmgyrfy^hfi2je5is99hre&d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','contentpirates.pythonanywhere.com'] #default es vacio
+ALLOWED_HOSTS = [] #default es vacio
 #
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -75,27 +76,18 @@ WSGI_APPLICATION = 'webProgramas.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 
-''' local
+''' local '''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbWebProgramas',
+        'NAME': 'dbDigitoreo',
         'USER': 'root',
         'PASSWORD': 'gatitosrosas',
         'HOST': 'localhost',
         'PORT': '3306',
     }
-} '''
+} 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nansinbling$dbDigitoro',
-        'USER': 'nansinbling',
-        'PASSWORD': 'gatitosrosas',
-        'HOST': 'nansinbling.mysql.pythonanywhere-services.com',
-    }
-}
 
 
 # Password validation
@@ -120,9 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-MX'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -136,10 +128,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#agregado para pythonanywhere
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/site') 
-
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'), #aqui se buscan los archivos estaticos
 ) 
+
+MEDIA_URL = '/media/'
+
+MEDIA_URL = os.path.join(BASE_DIR, 'media/')
+
+AUTH_USER_MODEL = 'users.User'

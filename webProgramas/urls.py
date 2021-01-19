@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from . import views #importa el archivo views.py
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('', views.index, name='index'), #index duh (path, funcion, alias)
-    path('/', views.index, name='index1'),
     path('login', views.loginView, name='login'), #login usuarios checar la extensión
     path('logout', views.logoutView, name='logout'), #login usuarios checar la extensión
     path('registro', views.register, name='register'),
@@ -41,3 +43,5 @@ urlpatterns = [
     #path('micuenta', views.micuenta, name='micuenta'),
     path('admin/', admin.site.urls), #esta estaba por default
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

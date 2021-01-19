@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 
 from .forms import RegisterForm
 from .forms import LoginForm
+from users.models import DescargaNotaDOF
 
 def index(request):
     return render(request, 'index.html', {    })
@@ -16,7 +17,11 @@ def seguimiento(request):
     return render(request, 'seguimiento.html', {    })
 
 def dof(request):
-    return render(request, 'dof.html', {    })
+    notas = DescargaNotaDOF.objects.all()
+
+    return render(request, 'dof.html', { 
+        'notasDOF': notas
+       })
 
 def inegi(request):
     return render(request, 'inegi.html', {    })

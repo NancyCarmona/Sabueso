@@ -1,5 +1,6 @@
 from django import forms
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from users.models import User
 
 class RegisterForm(forms.Form):
     nombre = forms.CharField(min_length=3 ,max_length=30, required=True, widget=forms.TextInput(attrs={
@@ -100,8 +101,8 @@ class RegisterForm(forms.Form):
     listaEstados= [
         ('', 'Selecciona un estado'),
         ('Aguascalientes','Aguascalientes'),
-        ('Baja California','Baja California'),
-        ('Baja California Sur','Baja California Sur'),
+        ('BajaCalifornia','Baja California'),
+        ('BajaCaliforniaSur','Baja California Sur'),
         ('Campeche','Campeche'),
         ('Chihuahua','Chihuahua'),
         ('Chiapas','Chiapas'),
@@ -116,12 +117,12 @@ class RegisterForm(forms.Form):
         ('Michoacan','Michoacán'),
         ('Morelos','Morelos'),
         ('Nayarit','Nayarit'),
-        ('Nuevo Leon','Nuevo León'),
+        ('NuevoLeon','Nuevo León'),
         ('Oaxaca','Oaxaca'),
         ('Puebla','Puebla'),
         ('Queretaro','Querétaro'),
-        ('Quintana Roo','Quintana Roo'),
-        ('San Luis Potosi','San Luis Potosí'),
+        ('QuintanaRoo','Quintana Roo'),
+        ('SanLuisPotosi','San Luis Potosí'),
         ('Sinaloa ','Sinaloa '),
         ('Sonora','Sonora'),
         ('Tabasco','Tabasco'),
@@ -130,7 +131,7 @@ class RegisterForm(forms.Form):
         ('Veracruz','Veracruz'),
         ('Yucatan','Yucatán'),
         ('Zacatecas','Zacatecas'),
-        ('Ciudad de Mexico','Ciudad de México')
+        ('CDMX','Ciudad de México')
         #value, label
     ]
     estado = forms.ChoiceField(choices=listaEstados, required=True, widget=forms.Select(attrs={
@@ -162,12 +163,19 @@ class RegisterForm(forms.Form):
         'autocomplete': 'off'
     }))
 
+    def clean_username(self):
+        username = self.cleaned_data.get('email')
+        if User.objects.filter(username=username).exists():
+            raise forms.ValidationError('Este correo electrónico ya se encuentra registrado')
+        return username
+
     def clean_email(self):
         email = self.cleaned_data.get('email')
-
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError('Este correo ya se encuentra registrado')
         return email
+
+    
 
     def clean(self):
         cleaned_data = super().clean()
@@ -176,12 +184,18 @@ class RegisterForm(forms.Form):
 
     def save(self):
         return User.objects.create_user(
-                self.cleaned_data.get('e_mail'),
+                self.cleaned_data.get('e_mail'), #usr
                 self.cleaned_data.get('e_mail'),
                 self.cleaned_data.get('password'),
                 first_name = self.cleaned_data.get('nombre'),
                 last_name = self.cleaned_data.get('apellidos'),
-             
+                telefono = self.cleaned_data.get('telefono'),
+                compania = self.cleaned_data.get('compania'),
+                direccion =self.cleaned_data.get('direccion'),
+                colonia = self.cleaned_data.get('colonia'),
+                ciudad = self.cleaned_data.get('ciudad'),
+                estado = self.cleaned_data.get('estado'),
+                codigoPostal = self.cleaned_data.get('codigoPostal'),
             )
         
 
