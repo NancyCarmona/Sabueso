@@ -5,9 +5,11 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib.auth.models import User
+from datetime import date
 
 from .forms import RegisterForm
 from .forms import LoginForm
+from .forms import ConsultaFechaForm
 from users.models import DescargaNotaDOF
 
 def index(request):
@@ -17,10 +19,17 @@ def seguimiento(request):
     return render(request, 'seguimiento.html', {    })
 
 def dof(request):
-    notas = DescargaNotaDOF.objects.all()
+    fechaActual1='{}-{}-{}'.format(date.today().year,date.today().month,date.today().day)
+    notasPorFecha = DescargaNotaDOF.objects.filter(fecha=fechaActual1)
+    formConsultaFecha = ConsultaFechaForm(request.POST or None)
+    if request.method == 'POST'and formConsultaFecha.is_valid():
+        fechaInput = formConsultaFecha.cleaned_data.get('fecha')
+        fechaBusqueda='{}-{}-{}'.format(fechaInput.year,fechaInput.month,fechaInput.day)
+        notasPorFecha=DescargaNotaDOF.objects.filter(fecha=fechaBusqueda)
 
     return render(request, 'dof.html', { 
-        'notasDOF': notas
+        'notasDOF': notasPorFecha,
+        'formConsultaFecha': formConsultaFecha
        })
 
 def inegi(request):
@@ -61,6 +70,9 @@ def privacy(request):
 
 def detalle(request):
     return render(request, 'detalle.html', {    })
+
+def alerta(request):
+    return render(request, 'alerta.html', {    })
 
 
 

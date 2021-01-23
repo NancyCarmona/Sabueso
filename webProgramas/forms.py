@@ -1,6 +1,9 @@
 from django import forms
 #from django.contrib.auth.models import User
 from users.models import User
+import django.forms
+import django.forms.utils
+import django.forms.widgets
 
 class RegisterForm(forms.Form):
     nombre = forms.CharField(min_length=3 ,max_length=30, required=True, widget=forms.TextInput(attrs={
@@ -162,6 +165,7 @@ class RegisterForm(forms.Form):
         'placeholder': '',
         'autocomplete': 'off'
     }))
+    
 
     def clean_username(self):
         username = self.cleaned_data.get('email')
@@ -218,3 +222,13 @@ class LoginForm(forms.Form):
         'placeholder': 'Contraseña',
         'autocomplete': 'off'
     }))
+    
+class ConsultaFechaForm(forms.Form):
+    fecha = forms.DateField(
+        label='fecha',
+        widget=django.forms.DateInput(
+            format='%Y-%m-%d',
+            attrs={'placeholder': 'dd/mm/aaaa', 'class': 'date', 'type': 'date'}))
+    
+
+    

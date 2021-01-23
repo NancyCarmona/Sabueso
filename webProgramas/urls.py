@@ -40,6 +40,7 @@ urlpatterns = [
     path('terminos', views.terms, name='terms'),
     path('privacidad', views.privacy, name='privacy'),
     path('detalle', views.detalle, name='detalle'),
+    path('alerta', views.alerta, name='alerta'),
     #path('micuenta', views.micuenta, name='micuenta'),
     path('admin/', admin.site.urls), #esta estaba por default
 ]

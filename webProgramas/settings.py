@@ -137,3 +137,4 @@ MEDIA_URL = '/media/'
 MEDIA_URL = os.path.join(BASE_DIR, 'media/')
 
 AUTH_USER_MODEL = 'users.User'
+

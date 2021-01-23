@@ -74,14 +74,14 @@
                                       </li>
                                         
 										<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children">
-                                            <a href="#"><span>Monitoreos</span></a>
+                                            <a><span>Monitoreos</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos de secretarias</span></a>
                                                 </li>
                                               
                                                 <li class="menu-item-has-children current-menu-item">
-                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <a><span>Opciones de Monitoreo</span></a>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item current-menu-item">
                                                             <a href="{% url 'dof' %}"><span>DOF</span></a>
@@ -98,7 +98,7 @@
                                             </ul>
                                         </li>
                                          <li class="menu-item  menu-item-has-children">
-                                            <a href="#"><span>Servicios</span></a>
+                                            <a><span>Servicios</span></a>
                                             <ul class="sub-menu">
 												<li class="menu-item">
                                                     <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
@@ -121,7 +121,7 @@
                                         </li>
                                         
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Sobre nosotros</span></a>
+                                            <a><span>Sobre nosotros</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'nos' %}"><span>Quiénes somos</span></a>
@@ -208,14 +208,14 @@
                               </li>
                                         
 										<li class="menu-item current-menu-ancestor current-menu-parent menu-item-has-children">
-                                            <a href="#"><span>Monitoreos</span></a>
+                                            <a><span>Monitoreos</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos de secretarias</span></a>
                                                 </li>
                                               
                                                 <li class="menu-item-has-children current-menu-item">
-                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <a><span>Opciones de Monitoreo</span></a>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item current-menu-item">
                                                             <a href="{% url 'dof' %}"><span>DOF</span></a>
@@ -232,7 +232,7 @@
                                             </ul>
                                         </li>
                                          <li class="menu-item  menu-item-has-children">
-                                            <a href="#"><span>Servicios</span></a>
+                                            <a><span>Servicios</span></a>
                                             <ul class="sub-menu">
 												<li class="menu-item">
                                                     <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
@@ -255,7 +255,7 @@
                                         </li>
                                         
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Sobre nosotros</span></a>
+                                            <a><span>Sobre nosotros</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'nos' %}"><span>Quiénes somos</span></a>
@@ -323,25 +323,35 @@
                                     <a href="#tab-1">Consulta por fecha</a>
                                 </li>
                                 <li class="active">
-                                    <a href="#tab-2">Consuta por palabra</a>
+                                    <a href="#tab-2">Consulta por palabra</a>
                                 </li>
                             </ul>
                             <div class="panel" id="tab-1">
                                 
 								
 								<h2>Consulta por fecha</h2>
-								 <div class="columns_wrap sc_columns aligncenter">
+								<form method='POST'>
+                                {% csrf_token %}
+                                 <div class="columns_wrap sc_columns aligncenter">
                                    <div class="column-1_2 sc_column_item">
-									   
-												   <img src="{% static 'images/svgs/calendar.svg' %}" alt="" width="25" height="25"/>  <input type="date">
-											                                        </div>
+										<!--<img src="{% static 'images/svgs/calendar.svg' %}" alt="" width="25" height="25"/>  
+                                        <input type="date"> -->
+                                        
+                                        {{formConsultaFecha.fecha}} <br><br>
+                                        <input class="sc_button sc_button_style_filled2 sc_button_size_medium sc_button_iconed" type="submit" value="Consultar con fecha">
+									</div>
                                    <div class="column-1_2 sc_column_item aligncenter">
 								   <div class="sc_form_item sc_form_button">
+
                     <a class="sc_button sc_button_style_filled2 sc_button_size_medium sc_button_iconed" href="#">Generar alertas</a>
                                      </div>
 
                                    </div>
                               </div>
+                                </form>
+                                <form>
+                    <button onclick="alert("Para generar alerta debes hacer búsqueda por palabras clave")" class="botonAlerta">Click Aquí para ver el ALERTA</button>
+                </form>
                                 <div class="sc_section overflow_hide margin_bottom_large">
                                     <div class="sc_section_inner">
                                         <div class="sc_section_content_wrap">

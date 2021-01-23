@@ -1,4 +1,6 @@
 {% load static %}
+
+{{ formLogin.media }}            {# Adds date-picker required JS and CSS #}
 <!DOCTYPE html>
 <html class="scheme_original" lang="es-MX">
 <head>
@@ -70,14 +72,14 @@
                                             <a href="{% url 'index' %}"><span>Inicio</span></a>
                                         </li>
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Monitoreos</span></a>
+                                            <a><span>Monitoreos</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos</span></a>
                                                 </li>
                                               
                                                 <li class="menu-item-has-children menu-item">
-                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <a><span>Opciones de Monitoreo</span></a>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item">
                                                             <a href="{% url 'dof' %}"><span>DOF</span></a>
@@ -95,7 +97,7 @@
                                         </li>
                                         
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Servicios</span></a>
+                                            <a><span>Servicios</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
@@ -202,14 +204,14 @@
                                             <a href="{% url 'index' %}"><span>Inicio</span></a>
                                         </li>
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Monitoreos</span></a>
+                                            <a><span>Monitoreos</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'seguimiento' %}"><span>Seguimientos y monitoreos</span></a>
                                                 </li>
                                               
                                                 <li class="menu-item-has-children menu-item">
-                                                    <a href="#"><span>Opciones de Monitoreo</span></a>
+                                                    <a><span>Opciones de Monitoreo</span></a>
                                                     <ul class="sub-menu">
                                                         <li class="menu-item">
                                                             <a href="{% url 'dof' %}"><span>DOF</span></a>
@@ -227,7 +229,7 @@
                                         </li>
                                         
                                         <li class="menu-item menu-item-has-children">
-                                            <a href="#"><span>Servicios</span></a>
+                                            <a><span>Servicios</span></a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="{% url 'prof' %}"><span>Profesionistas y especialistas</span></a>
@@ -322,7 +324,10 @@
 								</span>
 							  </label> 
                               {{formLogin.password}}
+                              {{formLogin.fecha}}
+                              {{formLogin.date}}
 							<!--  <input class="input-text" name="password" type="password"> -->
+                            
 							</p>
 							<div class="clear">
 							</div>
